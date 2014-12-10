@@ -1,7 +1,11 @@
 {% if user and not user.is_anonymous %}
   <a>Hello, {{ user.get_full_name }}!</a>
   <br>
+  <img src="{{ user.UserProfile.photo }}" width=20% class="img-account" >
+  <br>
   <a href="/logout">Logout</a>
 {% else %}
-  <a href="{% url 'social:begin' 'twitter' %}?next={{ request.path }}">Login with Twitter</a>
+  <p><a href="{% url 'social:begin' 'twitter' %}?next={{ request.path }}">Login with Twitter</a></p>
+  <p><a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}">Login with Facebook</a></p>
+  <p><a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}">Login with Google</a></p>
 {% endif %}

@@ -1,2 +1,6 @@
-<h1>Welcome</h1>
-<p><a href="/logout">Logout</a>
+<h1>Welcome {{user.username}}</h1>
+<h3>{{user.profile.image_url}}<h3>
+<h3>{{user.UserProfile.photo}}<h3>
+<h3>{{user.get_profile.photo}}<h3>
+<img src="{{user.profile.image_url}}" width=20% class="img-account" >
+<p><a href="/logout">Logout</a></p>
